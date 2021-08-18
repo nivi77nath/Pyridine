@@ -1,0 +1,68 @@
+/* your css code */
+@import "../../styles/mixins";
+
+.InitialSearch {
+  &__Wrapper {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    backdrop-filter: blur(18px);
+    top: 0px;
+    @include make-flex();
+
+    &::before {
+      content: "";
+      background-color: rgba(66, 70, 82, 0.2);
+      background-image: url(../../Assets/noise.png);
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  &__Container {
+    height: 410px;
+    width: 450px;
+    padding: 20px;
+    background-color: #262626;
+    @include make-flex($align: unset, $just: space-between);
+    border-radius: 4px;
+    box-shadow: 0 8px 60px rgb(0 0 0 / 40%);
+    .AutoInputWrapper {
+      height: calc(100% - 85px);
+    }
+  }
+  &__Tip {
+    color: #9aa1b2;
+    text-align: center;
+    font-family: "Jost", sans-serif;
+    font-size: 1.3rem;
+    code {
+      font-size: 1.1rem;
+      font-family: Consolas, "courier new";
+      background-color: #373737;
+      padding: 3px 9px;
+      border-radius: 4px;
+    }
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .InitialSearch {
+    &__Container {
+      width: calc(100% - 40px);
+      border-radius: unset;
+      .AutoInputWrapper {
+        height: calc(100% - 125px);
+        img {
+          height: 185px;
+        }
+        &__SuggestionBox {
+          height: calc(100% - 56px);
+        }
+      }
+    }
+  }
+}
