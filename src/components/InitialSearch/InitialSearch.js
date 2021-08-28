@@ -3,9 +3,11 @@ import PropTypes from "prop-types";
 import "./InitialSearch.scss";
 // import Chemistry from "../../Assets/chemistry.png";
 import AutoInput from "../AutoInput/AutoInput";
+import Pyridine from "../Pyridine/Pyridine";
 
 const InitialSearch = (props) => (
   <div className="InitialSearch__Wrapper">
+    <Pyridine />
     <div className="InitialSearch__Container">
       <AutoInput initial={true} />
       <div className="InitialSearch__Tip">

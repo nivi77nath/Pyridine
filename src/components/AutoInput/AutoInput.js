@@ -39,7 +39,7 @@ function AutoInput({ width, initial, props }) {
           <div
             className="AutoInputWrapper__SuggestionBox--item"
             onClick={() => {
-              history.push(`/${obj}`);
+              history.push(`/demo/${obj}`);
             }}
             key={index}
           >
